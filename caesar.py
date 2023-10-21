@@ -14,6 +14,12 @@ def caesar_encrypt(text, shift):
             result += char
     return result
 
-text = input('Введите строку (буквами русского алфавита): ')
-shift = int(input('Введите отступ (число): '))
-print(caesar_encrypt(text,shift))
+while True:
+    try:
+        text = input('Введите строку (буквами русского алфавита): ')
+        shift = int(input('Введите отступ (число): '))
+        print(caesar_encrypt(text, shift))
+        break
+    except ValueError:
+        print('Отступом должно быть целое число, попробуйте еще раз.')
+
